@@ -1,0 +1,1 @@
+plan <- read.table("silicium.txt",header = TRUE, sep='\t')

@@ -1,0 +1,87 @@
+方差 DX=E(X^bai2-2XEX+(EX)^2)  
+
+=E(X^2)-E(2XEX)+(EX)^2
+
+=E(X^2)-2(EX)^2+(EX)^2
+
+=E(X^2)-(EX)^2
+
+p(Hi)发生一个概率的概率
+
+-------------------------------------------------
+贝叶斯公式
+
+posterior 后验概率 posterior mean 先验概率和后验概率的区别
+P(X=玩lol)=0.6；P(X=不玩lol)=0.4，这个概率是统计得到的，即X的概率分布已知，我们称其为先验概率(prior probability)；
+最后算出的P(X=玩lol|Y=男性)之为X的后验概率，即它获得是在观察到事件Y发生后得到的
+
+credible interval 置信区间
+
+Bayes‘factor 贝叶斯因子
+
+为了避免sure loss 使用kolmogorov axioms 概率公理
+
+
+likelihood似然  概率描述了已知参数时的随机变量的输出结果；似然则用来描述已知随机变量输出结果时，未知参数的可能取值
+#参考  https://blog.csdn.net/songyu0120/article/details/85059149
+
+似然概率 后验概率 先验概率 区别https://www.cnblogs.com/eniac1946/p/8532753.html
+
+POI principe of indifference 无差别原则
+
+second order probabilities
+bernoulli  伯努利分布 0-1分布
+------------------------------------------------------------
+
+
+https://zhuanlan.zhihu.com/p/24602462
+
+
+jeffrevs prior 朴素贝叶斯分布
+https://www.zhihu.com/question/67846877
+expect value
+
+
+泊松分布  http://www.ruanyifeng.com/blog/2015/06/poisson-distribution.html
+-------------------------------------------------------------
+马尔可夫链  markov chain
+
+https://theclevermachine.wordpress.com/tag/time-homogeneous-markov-chain/
+
+https://www.probabilitycourse.com/chapter11/11_2_4_classification_of_states.php
+
+inessential states soon or later 不能回到当前的状态
+essential states 能够回到当前的状态
+
+在communicate class中markov clain只能从k0到k1不能从k0跳到k3
+satrt at k0
+
+P的转移矩阵第一行意味着在state 1
+           第二行意味着在state 2
+
+P^2 意味着两次移动之后的到达各个点的概率
+
+5steps之后都会返回原点
+
+
+马可夫时
+Mc时间序列中Xn只能依赖于现在和过去 和将来无关
+
+
+recurrence and transiency
+pi 中i指mc起始于i  并且回到i
+recurrence fii=1 会重新回到当前的点   每个状态会被访问无数次
+transiency fii<1 可能会回到当前的点   每个状态会被访问有限次
+
+A Markov chain is said to be #irreducible# if all states communicate with each other.
+All elements of an irreducible MC are either transient or recurrent.
+
+
+Metropolis-Hasting algorithm 梅特罗波利斯－黑斯廷斯算法
+https://zhuanlan.zhihu.com/p/21112618
+
+rejection sampling 接受拒绝采样
+https://gaolei786.github.io/statistics/reject.html
+
+MCMC算法  马尔可夫链蒙特卡罗算法（MCMC）
+https://zhuanlan.zhihu.com/p/37121528

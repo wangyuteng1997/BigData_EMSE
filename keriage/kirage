@@ -1,0 +1,28 @@
+克里金
+https://xg1990.com/blog/archives/222
+
+https://zhuanlan.zhihu.com/p/104601803
+
+高斯过程核函数就是协方差函数
+https://zhuanlan.zhihu.com/p/75589452
+
+y   =   {  cov 矩阵
+ 	
+y*
+
+左边是实际值和要预测的值，右侧是核函数也就是cov矩阵
+
+
+
+
+全局优化
+
+CMA-ES 算法
+https://www.cnblogs.com/tsingke/p/6258967.html
+
+
+ES-(1+1) 一次迭代生成一个子代
+https://blog.csdn.net/hba646333407/article/details/104954277
+
+CME-es 就是ES的另外一个形式 ES（u，p）
+u个父类 创建p个子类

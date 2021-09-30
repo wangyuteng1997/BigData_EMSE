@@ -1,0 +1,79 @@
+---
+title: 'TP1 : Plans d''expériences liés aux modèles linéaires'
+output: html_document
+---
+# Exercice 1
+
+On s’intéresse à l’apparition d’un défaut de fabrication récurrent lors de la fabrication de plaques de silicium (support des composants microélectroniques). Il s’agit d’un défaut de planéité de la plaque qui entraîne une détérioration des propriétés mécaniques des plaques fabriquées. Une partie des composants électroniques fabriqués sont alors rejetés, ce qui diminue le rendement de fabrication. L’objectif de l’étude est de détecter les facteurs inﬂuents sur la courbure des plaques de silicium. Les étapes les moins maitrisées dans le processus de fabrication sont le laminage à froid de la plaque silicium et la cuisson de cette plaque en atmosphère réductrice. Les paramètres intervenant lors de ces deux étapes sont :
+
+- le temps de laminage qui varie entre 10 et 25 secondes : Ltime  
+- la température de laminage qui varie entre 55 et 75 degrés C : Ltemp
+- la pression de laminage qui varie entre 5 et 10 bars : Lpress 
+- la température de cuisson qui se fait entre 1580 et 1620 degrés C : Ctemp 
+- le temps de cuisson qui se fait entre 17,5 et 29 secondes : Ctime 
+- l’atmosphère de cuisson dont la température de rosée est soit égale à 20 degrés C ou 26 degrés C : Catmos.
+  
+Aﬁn de sélectionner les variables inﬂuentes, un plan d’expériences a été réalisé. Les données sont contenues dans le ﬁchier silicium.txt.
+
+#### Question 1
+
+Importer le ﬁchier silicium.txt sous R.  
+Donner le nom du plan.  
+Vérifier que le plan est orthogonal. Expliquez en quoi c'est important.  
+Ce plan permet-il d’estimer les eﬀets principaux sans confusion? les eﬀets d’interactions? Donnez au moins 2 alias de 1 et expliquer comment ce plan a été construit.  
+
+#### Question 2
+
+Ajuster un modèle linéaire de la variable Camber en fonction des 6 facteurs.  
+Analyser rapidement la sortie summary du modèle, notamment sur l’influence des variables  
+Si l'on retire une ou plusieurs variables, les valeurs des estimations des $\beta$ associés aux variables restantes seront-elles modifiées ? Pourquoi ?  
+
+#### Question 3 
+
+Retrouver par le calcul les valeurs de la colonne Estimate (sans faire calculer par R l’inverse de $^{t}XX$)  
+  
+#### Question 4
+
+Retrouver par le calcul (sans lancer de calcul matriciel en R) les valeurs de la colonne Std Error, en utilisant la valeur Residual standard error de la sortie de la question 2.  
+  
+
+#### Question 5
+
+Quel est l’impact sur la courbure d’une augmentation de 5°C de la température de laminage ?   
+
+#### Question 6
+
+Ecrire l’équation du modèle en ne conservant que les 4 facteurs les plus influents
+
+#### Annexe
+
+<img src="annexe.png"/>
+
+# Exercice 2
+
+Le fichier plan_exp.txt nous donne un plan d'expériences pour 2 variables X1 et X2.
+
+#### Question 1
+
+Importer le fichier plan_exp.txt sous R.  
+Executer les commandes suivantes pour revenir aux variables adimentionnées.
+Visualiser le plan en 2D
+
+```{r}
+plan_exp <- read.table("plan_exp.txt",header = TRUE, sep='\t')
+plan_exp$X1 <- (plan_exp$X1- 85)/ 35  
+plan_exp$X2 <- (plan_exp$X2- 20)/ 5
+
+```
+
+#### Question 2.
+
+On va considérer un modèle qui prend en compte les interactions entre X1 et X2 ainsi qu’un terme du second d’ordre en X1. Ecrivez l’équation du modèle et donnez la matrice X.
+
+#### Question 3
+
+3.	On va maintenant rajouter au plan d’expérience un point en $(X1 = \alpha, X2 = \alpha)$, qui satisfait le critère de A-optimalité : 
+
+-	Rappelez la grandeur à optimiser pour ce critère.
+-	Tracer, pour $\alpha \in [-1,1]$, l’évolution de cette grandeur en fonction de $\alpha$, en utilisant les valeurs propres de de $^{t}{X}X$
+-	En déduire le $\alpha$ optimal. Comment appelle-t-on le plan ainsi obtenu ? Visualisez le en 2D

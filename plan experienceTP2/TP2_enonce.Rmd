@@ -1,0 +1,63 @@
+---
+title: "TP2 : Plans d'expériences pour simulations numériques"
+output: html_notebook
+---
+# Exercice 1
+
+Importer le package DiceDesign. La documentation relative à ce package est disponible ici : https://cran.r-project.org/web/packages/DiceDesign/DiceDesign.pdf  
+Importer également les packages geometry et pracma.
+
+```{r}
+library(DiceDesign)
+library(geometry)
+library(pracma)
+```
+
+### Question 1
+
+Grâce à la fonction lhsDesign(n,p) du package DiceDesign, construire un plan LHS non optimisé à 10 points en 2 dimensions et le visualiser.
+
+### Question 2
+
+Grâce à la fonction maximinSA_LHS, construire un plan LHS en optimisant le critère maximin. (en conservant l'ensemble des paramètres de la fonction par défaut)
+
+### Question 3
+
+Grâce à la fonction discrepSA_LHS, construire un plan LHS en optimisant la discrépance (en conservant l'ensemble des paramètres de la fonction par défaut)
+
+### Question 4
+
+Parmi les 3 plans, lequel est optimal selon le critère maximin ? Utiliser la fonction mindist.
+
+### Question 5
+
+Parmi les 3 plans, lequel est optimal selon le critère minimax ? Utiliser la fonction Minimax du dossier "functions". Interpréter le point vert
+
+```{r}
+source('functions/Minimax.R')
+```
+
+### Question 5
+
+Parmi les 3 plans, lequel est optimal selon la discrépance ? Utiliser la fonction discrepancyCriteria.
+
+### Question 6 
+
+Créer maintenant un lhs à 50 points en dimension 5 à l'aide de la fonction lhsDesign. Utiliser le paramètre "seed" de cette fonction et fixer le à 5 pour obtenir les mêmes résultats que tout le monde.    
+Grâce à l'argument "it" des fonctions maximinSA_LHS et discrepSA_LHS, tracer l'évolution des critères maximin et de discrepance au fil des itérations des algorithmes d'optimisation associés à ces critères. Commenter.
+
+# Exercice 2 :
+
+Créer une function permettant de généer un LHS(n,p) avec un aléa uniforme (bien sûr sans utiliser de fonctions dédiées déjà implémentées comme lhsDesign), et visualiser un plan lhs(10,2) construit avec cette fonction.
+
+# Exercice 3
+
+Approcher l'intégrale suivante : $$\int_{\left[0,1\right]^{4}}\displaystyle(\prod_{i=1}^{4}x_{i}^{3})dx$$
+à l'aide d'une suite de Halton construire avec la fonction vanderCorput(n, base) du package vipor qui permet de générer les n premiers éléments de la suite de Van der Corput en base b.  
+  
+Etudier l'évolution de l'écart entre l'intégrale et l'approximation. Commenter notamment l'évolution pour $10^4 \leq n \leq 10^5$, et la mettre en regard avec la formule du cours pour les suites à faible discrépance.
+
+```{r}
+library(vipor)
+```
+

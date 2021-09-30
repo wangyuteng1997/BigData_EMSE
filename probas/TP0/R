@@ -1,0 +1,245 @@
+dnorm表示正太分布密度函数，pnorm 返回到当前这点的累计分布概率总值 qnorm是累积分布概率的反函数  rnorm表示生成符合正太分布的随机数
+
+#c函数（向量函数）
+https://www.cnblogs.com/wacc/p/3673629.html
+
+#hist函数
+break参数是将横坐标分成多少个间隔点
+freq true出现的次数 false是出现的频率
+main是这个图片的名称
+v是包含直方图中使用的数值的向量。
+main表示图表的标题。
+col用于设置条的颜色。
+border用于设置每个条的边框颜色。
+xlab用于给出x轴的描述。
+xlim用于指定x轴上的值的范围。
+ylim用于指定y轴上的值的范围。
+
+
+#points函数
+cex点的大小
+pch点的样式
+points(c(1,2),c(2.4),pch='*')
+
+#seq函数
+seq(from, to, by)  by是间隔
+
+#rep函数：
+1rep（a，n)对前面的值a 复制 n次
+rep((1,2)2) 1,2 1,2
+
+2rep(a,b,c)从a到b间隔c
+
+#round函数
+round(3.3243,2)保留两位小数
+
+#quantile函数
+在R语言中取百分位比用quantile()函数
+data <- c(1,2,3,4,5,6,7,8,9,10)
+quantile(data,1)
+
+#函数abline()
+可以在图上加直线，其使用方法有四种格式。
+abline(a,b)    表示画一条y=a+bx的直线
+
+qqnorm是画出QQ散点图，qqline是画出残差拟合线
+https://zhuanlan.zhihu.com/p/53124278
+
+
+ 二项分布模型
+dbinom(x, size, prob)该函数给出了每个点的概率密度分布
+rbinom（n, size, prob）该函数从给定样本产生给定概率的所需数量的随机值。
+
+x - 是数字的向量。
+p - 是概率向量。
+n - 是观察次数。
+size - 是试验的次数。
+prob - 是每次试验成功的概率
+
+
+
+线性回归
+t值 p值  https://blog.csdn.net/zhangjipinggom/article/details/82315232?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param
+
+t分布 f分布
+https://zhuanlan.zhihu.com/p/42136925
+
+lm函数
+求出两个变量的线性回归函数
+y=ax+b
+
+summary函数
+https://blog.csdn.net/qq_27586341/article/details/92636671
+t检验：t检验是对单个变量系数的显著性检验   一般看p值；    如果p值小于0.05表示该自变量对因变量解释性很强。
+https://www.zhihu.com/question/30753175
+残差第一四分位数（1Q）和第三分位数（Q3）
+残差最大值最小值
+
+1）第一四分位数(Q1)，又称“较小四分位数”，等于该样本中所有数值由小到大排列后第25%的数字；
+
+2）第二四分位数(Q2)，又称“中位数”，等于该样本中所有数值由小到大排列后第50%的数字；
+
+3）第三四分位数(Q3)，又称“较大四分位数”，等于该样本中所有数值由小到大排列后第75%的数字。
+
+anova函数
+https://blog.csdn.net/Tiaaaaa/article/details/58134868
+方差分析(Analysis of Variance，简称ANOVA)，又称“变异数分析”，是R.A.Fisher发明的，用于两个及两个以上样本均数差别的显著性检验
+使用F分布
+https://blog.csdn.net/zhangjipinggom/article/details/82315232?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param
+（t分布是用来分析小样本数量的）
+
+
+
+confint函数
+confidenceEllipse  绘制置信椭圆
+https://blog.csdn .net/maryyu8873/article/details/78491869
+
+vcov函数
+vcov()所属R语言包：stats
+Calculate Variance-Covariance Matrix for a Fitted Model Object
+                                         计算协方差矩阵拟合模型对象
+
+predict函数
+https://blog.csdn.net/hsdcc217/article/details/78395240
+
+residuals函数
+https://zhuanlan.zhihu.com/p/49149862
+
+//multiple r squared vs adjusted r squared
+blog.csdn.net/wwangfabei1989/article/details/80656668
+
+F stastic F分布
+
+高斯马尔可夫定理
+https://zh.wikipedia.org/wiki/%E9%AB%98%E6%96%AF-%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E5%AE%9A%E7%90%86
+
+
+
+up3 时间序列
+自回归模型的解释
+http://blog.fens.me/r-ar/
+
+https://otexts.com/fppcn/autocorrelation.html
+
+各种模型结尾和拖尾
+https://www.jianshu.com/p/f9e4cfc69e12
+
+平稳的过程
+https://zhuanlan.zhihu.com/p/64757964
+一般地，在经济系统中，一个非平稳的时间序列通常均可通过差分变换的方法转换成为平稳序列。
+
+时间序列的AR,MA,ARMA模型
+https://blog.csdn.net/FrankieHello/article/details/80883147
+https://zhuanlan.zhihu.com/p/22248464
+
+如何分析AR,MA
+https://y1ran.blog.csdn.net/article/details/83348245?utm_medium=distribute.pc_relevant.none-task-blog-searchFromBaidu-1.not_use_machine_learn_pai&depth_1-utm_source=distribute.pc_relevant.none-task-blog-searchFromBaidu-1.not_use_machine_learn_pai
+
+对ACF图的分析
+https://zhuanlan.zhihu.com/p/143022185
+
+ARMAX模型
+https://www.cnblogs.com/statruidong/p/6910893.html
+
+
+TP-FINAL
+https://blog.csdn.net/heirenmin/article/details/93317354
+补充说明：https://zhuanlan.zhihu.com/p/22248464
+另外的很有用资料：https://otexts.com/fppcn/seasonal-arima.html
+
+特别重要：：https://blog.csdn.net/glodon_mr_chen/article/details/79848827?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1.not_use_machine_learn_pai&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1.not_use_machine_learn_pai
+https://blog.csdn.net/LiuYuan_BJTU/article/details/67068404?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-2.not_use_machine_learn_pai&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-2.not_use_machine_learn_pai
+
+参考：：https://zhuanlan.zhihu.com/p/54002405
+https://zhuanlan.zhihu.com/p/69091649 p和q的选择
+
+白噪声就是平稳的，在发现序列平稳之后需要检验是否有白噪声
+
+ARIMA模型的求阶数：ARIMA模型为平稳时间序列定义的。因此，如果你从一个非平稳的时间序列开始，首先你就需要做时间序列差分直到你得到一个平稳时间序列。
+如果你必须对时间序列做d阶差分才能得到一个平稳序列，那么你就使用ARIMA(p,d,q)模型，其中d是差分的阶数。
+
+
+up4
+Hesse-Matrix
+https://zh.wikipedia.org/wiki/%E9%BB%91%E5%A1%9E%E7%9F%A9%E9%99%A3
+
+Jacobian矩阵和Hessian矩阵
+http://jacoxu.com/jacobian%E7%9F%A9%E9%98%B5%E5%92%8Chessian%E7%9F%A9%E9%98%B5/
+
+最优化问题是求解函数极值的问题，
+https://zhuanlan.zhihu.com/p/36902908
+https://www.zhihu.com/question/305638940
+
+梯度下降法
+https://www.cnblogs.com/pinard/p/5970503.html
+
+无约束优化算法	
+无约束优化方法是研究寻求多元函数ƒ(尣)=ƒ(x1,x2,…,xn)在整个实n维空间Rn中局部极小值点的数值方法。
+它在非线性规划的研究中占有很重要的位置，除了本身的意义与应用外，它也是许多带约束优化方法的基础
+https://tfeima.github.io/2018/07/11/%E5%87%A0%E7%A7%8D%E5%B8%B8%E8%A7%81%E7%9A%84%E6%97%A0%E7%BA%A6%E6%9D%9F%E4%BC%98%E5%8C%96%E9%97%AE%E9%A2%98%E7%AE%97%E6%B3%95/
+https://zhuanlan.zhihu.com/p/67281656
+
+Armijo方法
+https://www.codelast.com/%E5%8E%9F%E5%88%9B%E7%94%A8%E4%BA%BA%E8%AF%9D%E8%A7%A3%E9%87%8A%E4%B8%8D%E7%B2%BE%E7%A1%AE%E7%BA%BF%E6%90%9C%E7%B4%A2%E4%B8%AD%E7%9A%84armijo-goldstein%E5%87%86%E5%88%99%E5%8F%8Awo/
+
+梯度下降法，牛顿法，共轭梯度法
+https://blog.csdn.net/lipengcn/article/details/52698895  共轭梯度下降法
+
+
+up决策树
+基尼系数：
+https://zhuanlan.zhihu.com/p/76667156
+基尼不纯度：
+https://blog.csdn.net/JJBOOM425/article/details/79997440
+
+父类到子类不纯度降低（决策树基础知识，前面可以不看）
+https://zhuanlan.zhihu.com/p/104462031
+
+AUC、ROC、ACC区别
+https://blog.csdn.net/resourse_sharing/article/details/51496494
+
+rpart决策树函数
+https://zhuanlan.zhihu.com/p/28383920
+决策树r语言实现
+https://www.jianshu.com/p/b607c478a661
+
+之后使用prune函数进行减枝
+在完整树的基础上，prune()函数根据复杂度参数剪掉最不重要的枝，从而将树的大小控制在理想范围内。从cptable中可以看到，三次分割对应的复杂度参数为0.01176471，进而对决策树剪枝：
+dtree.pruned <- prune(dtree,cp=0.012) #根据复杂度cp剪枝，控制树的大小
+library(rpart.plot)
+?prp
+prp(dtree.pruned,type = 2, extra = 104,
+ fallen.leaves = TRUE, main = 'Decision Tree') #画出最终的决策树
+
+na.omit函数
+na.omit（<向量a>）: 返回删除NA后的向量a
+
+混淆矩阵等：
+https://www.sohu.com/a/317419034_274950
+
+决策树和随机森林
+https://medium.com/@pkqiang49/%E4%B8%80%E6%96%87%E7%9C%8B%E6%87%82%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97-random-forest-%E9%99%84-4-%E4%B8%AA%E6%9E%84%E9%80%A0%E6%AD%A5%E9%AA%A4-4-%E7%A7%8D%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F%E8%AF%84%E6%B5%8B-10-%E4%B8%AA%E4%BC%98%E7%BC%BA%E7%82%B9-63d71cc8bfe6
+
+
+WEKA：
+weka.filters中包含了一些数据预处理的简单实现（其实已经够用了），主要分成两大类，监督过滤（UnsupervisedFilter）和非监督过滤（UnsupervisedFilter）
+https://www.cnblogs.com/htynkn/archive/2012/04/02/weka_3.html
+
+如何select attribute 
+https://zhuanlan.zhihu.com/p/57665449
+
+AttributeSelection过滤器用于自动属性选择，并提供与探索者界面中Select attributes子面板相同的功能
+
+
+
+SVM
+
+https://www.jiqizhixin.com/articles/2018-10-17-20
+
+
+
+Plan experience
+
+cours 2：
+
+https://zhuanlan.zhihu.com/p/20197323
